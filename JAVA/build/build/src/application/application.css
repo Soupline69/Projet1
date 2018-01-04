@@ -1,0 +1,141 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.menuContainer {
+	-fx-background-color : #cd919e;
+	-fx-min-height : 75px;
+	-fx-padding : 21.5px;
+	-fx-border-color : #8b0a50;
+	-fx-border-width: 0 0 3 0;
+	-fx-alignment : center;
+}
+
+.label {
+	-fx-alignment : baseline-left;
+	-fx-min-width: 120px;
+	-fx-font-size : 17px;
+	-fx-font-weight: bold;
+}
+
+.contentsContainer {
+	-fx-background-color : #eee0e5;
+}
+
+.text-field:focused, .text-area:focused {
+	-fx-focus-color: -fx-control-inner-background;
+    -fx-faint-focus-color: -fx-control-inner-background;
+}
+
+.text-field, .text-area {
+	-fx-background-color : white;
+	-fx-pref-width: 250px;
+	-fx-padding : 2px 10px 2px 10px;
+	-fx-border-color: black;
+	-fx-background-insets: 0, 1, 2;
+	-fx-font-size : 17px;
+	-fx-border-radius : 15 15 15 15;
+    -fx-background-radius : 15 15 15 15;
+    -fx-prompt-text-fill: black;
+    -fx-text-box-border: -fx-control-inner-background;    
+}
+
+.text-area {
+	-fx-font-size : 15px;
+	-fx-padding : 3px;
+	-fx-pref-height : 150px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+}
+
+.text-area .scroll-bar {
+	-fx-background-color : white;
+}
+
+.date-picker:focused {
+	-fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.date-picker {
+
+}
+
+.date-picker .icon {
+	-fx-background-color : white;
+}
+
+.date-picker > .arrow-button,
+.date-picker:focused > .arrow-button {
+    -fx-background-color: #eee0e5;
+    -fx-border-color : black;
+}
+
+.date-picker .text-field {
+	-fx-border-color : black;
+	-fx-border-radius : 0;
+    -fx-background-radius : 0;
+}
+
+.smartBox {
+	-fx-padding : 0px 0px 5px 5px;
+}
+
+.labelTitle {
+	-fx-padding : 30px 0px 0px 0px;
+	-fx-font-family : Comic Sans MS;
+	-fx-font-size: 25px;
+	-fx-underline : true;
+	-fx-text-fill : #8b0a50;
+	-fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-background-color: #ffe4e4;
+	-fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background .label{
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-alignment : center;
+}
+
+.table-view .table-column {
+	-fx-alignment: center;
+	-fx-text-fill : black;	
+	-fx-font-size : 16px;
+
+}
+
+.table-row-cell {
+	-fx-padding : 2px 0px 0px 0px;
+    -fx-background-color: #fefbfc;
+    -fx-pref-height: 33px;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #ffe4e4;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e48383;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: #8b0a50;
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-border-width: 0 2 0 0;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: #8b0a50;
+}

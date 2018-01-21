@@ -7,7 +7,7 @@ import javafx.scene.layout.Pane;
 import objects.MyPane;
 
 public class MyPaneMenu extends BorderPane {
-	private HBox menuContainer = new HBox(50);
+	private HBox menuContainer = new HBox(100);
 	
 	public MyPaneMenu(Controller controller) {
 		buildMenu(controller);

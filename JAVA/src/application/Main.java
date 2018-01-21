@@ -17,7 +17,7 @@ public class Main extends Application {
 			try {
 				Controller controller = new Controller(new Model());
 				Pane root = new MyPaneMenu(controller);
-				Scene scene = new Scene(root, 1000, 600);
+				Scene scene = new Scene(root, 1280, 800);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				
 				primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
@@ -28,6 +28,7 @@ public class Main extends Application {
 				});
 				
 				primaryStage.setScene(scene);
+				primaryStage.setResizable(false);
 				primaryStage.setTitle("Programme de gestion");
 				primaryStage.show();
 			} catch(Exception e) {

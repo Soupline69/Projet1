@@ -19,5 +19,5 @@ public class MyPaneUpdateClient extends MyPaneAddClient {
 		((TextField) elements.get(4).getComponent()).setText(client.getCity());
 		((TextField) elements.get(5).getComponent()).setText(client.getPhoneNumber());
 	}
-
+	
 }

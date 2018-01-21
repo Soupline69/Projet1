@@ -23,7 +23,7 @@ public abstract class MyPaneAdd extends MyPane {
 	public MyPaneAdd(String string, int id, String method, Controller controller) {
 		super(string);
 		this.controller = controller;
-		add = new MyButton("yes.png", new AddListener(id, method));
+		add = new MyButton("add.png", new AddListener(id, method));
 		reset = new MyButton("reset.png", new ResetListener());
 		init();
 		buildPanel();
@@ -35,33 +35,19 @@ public abstract class MyPaneAdd extends MyPane {
 	private void buildPanel() {
 		VBox vBox = new VBox(15);
 		vBox.setAlignment(Pos.BASELINE_CENTER);
-		vBox.getStyleClass().add("group");
 
-		response.setPrefHeight(50);
+		response.setPrefHeight(100);
 		vBox.getChildren().add(response);
 		
-		elements.stream().forEach(element -> addGroup(vBox, element));
+		elements.stream().forEach(element -> vBox.getChildren().add(element.getGroup()));
 
-		HBox buttonsBox = new HBox(35);
+		HBox buttonsBox = new HBox(75);
 		buttonsBox.getChildren().addAll(reset, add);
 		buttonsBox.setAlignment(Pos.CENTER);
 		vBox.getChildren().add(buttonsBox);
-		VBox.setMargin(buttonsBox, new Insets(30, 0, 0, 0));
+		VBox.setMargin(buttonsBox, new Insets(45, 0, 0, 0));
 		
 		setCenter(vBox);
-	}
-	
-	private void addGroup(VBox vBox, Element element) {
-		HBox box = new HBox(30);
-		box.setAlignment(Pos.CENTER);
-		
-		Label label = new Label(element.getLabel());
-		
-		if(element.isRequired()) 
-			element.getComponent().setStyle("-fx-border-color : red");
-		
-		box.getChildren().addAll(label, element.getComponent());
-		vBox.getChildren().add(box);
 	}
 	
 	protected void displayResult(boolean hasError, String text) {
@@ -73,7 +59,7 @@ public abstract class MyPaneAdd extends MyPane {
 	}
 	
 	private void changeResponse(String color, String text) {
-		response.setStyle("-fx-min-height : 25px; -fx-font-size : 14px; -fx-text-fill : " + color + ";");
+		response.setStyle("-fx-font-size : 17px; -fx-text-fill : " + color + ";");
 		response.setText(text);
 	}
 	

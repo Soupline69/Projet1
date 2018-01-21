@@ -12,7 +12,7 @@ import smartsearchs.SmartSearchDatePicker;
 public class PaneTableMeetings extends MyPaneTable {
 
 	public PaneTableMeetings(MyTable<?> table, boolean display, MyPaneMenu paneMenu, Controller controller) {
-		super(table, 275, display, paneMenu, controller);
+		super(table, 388, display, paneMenu, controller);
 	}
 
 	@Override

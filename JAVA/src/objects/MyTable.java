@@ -23,7 +23,9 @@ public abstract class MyTable<T> extends TableView<T> {
 	}
 	
 	public void refresh(String text) {
-		setPlaceholder(new Label("Pas de données trouvées pour \"" + text + "\""));
+		Label label = new Label("Pas de données trouvées pour \"" + text + "\"");
+		label.setStyle("-fx-font-size : 25px;");
+		setPlaceholder(label);
 	}
 	
 	protected abstract Object updateConcreteItem(Method method, T t) throws Exception;
@@ -41,7 +43,7 @@ public abstract class MyTable<T> extends TableView<T> {
 	
 	protected <S extends MyButton> void addButtonColumn(Method method, Class<S> class1) {
 		TableColumn<T, T> button = new TableColumn<>("");
-        button.setPrefWidth(40);
+        button.setPrefWidth(60);
         button.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
         button.setCellFactory(param -> new TableCell<T, T>() {
             private MyButton button;

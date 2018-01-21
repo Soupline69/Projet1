@@ -24,18 +24,18 @@ public class MyPanePlanning extends MyPane {
 		buildButtons();
 		
 		paneTable = new PaneTableMeetings(new MyTableViewMeetingsList(paneMenu, controller), true, paneMenu, controller);
-		paneTable.setMaxWidth(900);
+		paneTable.setMaxWidth(1100);
 		setCenter(paneTable);
 	}
 	
 	private void buildButtons() {
 		MyButton left = new MyButton("left.png", new SetDateListener(-1));
-		left.setPadding(new Insets(0, 0, 175, 0));
+		left.setPadding(new Insets(0, 0, 275, 0));
 		setLeft(left);
 		setAlignment(left, Pos.BOTTOM_CENTER);
 		
 		MyButton right = new MyButton("right.png", new SetDateListener(1));
-		right.setPadding(new Insets(0, 0, 175, 0));
+		right.setPadding(new Insets(0, 0, 275, 0));
 		setRight(right);
 		setAlignment(right, Pos.BOTTOM_CENTER);
 	}

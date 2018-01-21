@@ -17,10 +17,10 @@ public class MyTableViewMeetingsList extends MyTable<Meeting> {
 		super(paneMenu, controller);
 		
 		try {
-			addColumn("Date", "date", 100);
-			addColumn("Heure", "time", 100);
-			addColumn("Client", "client", 218);
-			addColumn("Description", "description", 383);
+			addColumn("Date", "date", 150);
+			addColumn("Heure", "time", 120);
+			addColumn("Client", "client", 250);
+			addColumn("Description", "description", 441);
 			addButtonColumn(MyTableViewMeetingsList.class.getMethod("getMyButtonUpdate", Meeting.class), MyButtonPane.class);
 			addButtonColumn(MyTableViewMeetingsList.class.getMethod("getMyButtonDelete", Meeting.class), MyButton.class);
 		} catch(Exception e) {

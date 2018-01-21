@@ -33,12 +33,12 @@ public class MyPaneAddClient extends MyPaneAdd {
 	protected CRUD get(int id) {
 		String lastName = ((TextField) elements.get(0).getComponent()).getText().trim();
 		String firstName = ((TextField) elements.get(1).getComponent()).getText().trim();
-		String adress = ((TextField) elements.get(2).getComponent()).getText().trim();
+		String adress = ((TextField) elements.get(2).getComponent()).getText();
 		String postal = ((TextField) elements.get(3).getComponent()).getText();
-		String city = ((TextField) elements.get(4).getComponent()).getText().trim();
+		String city = ((TextField) elements.get(4).getComponent()).getText();
 		String phoneNumber = ((TextField) elements.get(5).getComponent()).getText();
 		
 		return new ClientDB(id, lastName, firstName, adress, postal, city, phoneNumber);
 	}
-
+	
 }

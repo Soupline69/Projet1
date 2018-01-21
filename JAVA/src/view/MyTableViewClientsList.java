@@ -20,12 +20,12 @@ public class MyTableViewClientsList extends MyTable<Client> {
 
 	    try {
 	    	addButtonColumn(MyTableViewClientsList.class.getMethod("getMyButtonInfo", Client.class), MyButtonPane.class);
-	    	addColumn("Nom", "lastName", 135);
-	        addColumn("Prénom", "firstName", 135);
-	        addColumn("Adresse", "adress", 225);    
-	        addColumn("Postal", "postal", 76);
-	        addColumn("Ville", "city", 130);
-	        addColumn("Téléphone", "phoneNumber", 120);
+	    	addColumn("Nom", "lastName", 167);
+	        addColumn("Prénom", "firstName", 166);
+	        addColumn("Adresse", "adress", 300);    
+	        addColumn("Postal", "postal", 90);
+	        addColumn("Ville", "city", 170);
+	        addColumn("Téléphone", "phoneNumber", 140);
 			addButtonColumn(MyTableViewClientsList.class.getMethod("getMyButtonUpdate", Client.class), MyButtonPane.class);
         	addButtonColumn(MyTableViewClientsList.class.getMethod("getMyButtonAddRDV", Client.class), MyButtonPane.class);
 			addButtonColumn(MyTableViewClientsList.class.getMethod("getMyButtonDelete", Client.class), MyButton.class);

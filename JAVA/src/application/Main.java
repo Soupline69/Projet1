@@ -17,7 +17,7 @@ public class Main extends Application {
 			try {
 				Controller controller = new Controller(new Model());
 				Pane root = new MyPaneMenu(controller);
-				Scene scene = new Scene(root, 1280, 800);
+				Scene scene = new Scene(root, 1292, 808);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				
 				primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {

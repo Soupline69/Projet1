@@ -175,7 +175,7 @@ BEGIN
 	SELECT * 
 	FROM clients 
 	WHERE lastName LIKE concat(search, '%') OR firstName LIKE concat(search, '%') OR phoneNumber LIKE concat(search, '%')
-	ORDER BY firstName, lastName;
+	ORDER BY lastName, firstName;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -260,11 +260,7 @@ BEGIN
 	IF concat(last, ' ', first) <> concat(NlastName, ' ', NfirstName) THEN 
 		UPDATE meetings 
 		SET client = concat(NlastName, ' ', NfirstName)
-		WHERE id IN (
-			SELECT meeting 
-            FROM meetingsclients
-            WHERE client = Nid
-		);
+		WHERE fkClient = Nid;
 	END IF;
 
 	UPDATE clients 
@@ -318,4 +314,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-03 21:14:03
+-- Dump completed on 2018-01-22 17:17:54

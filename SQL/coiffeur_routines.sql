@@ -41,10 +41,6 @@ BEGIN
 	clients (lastName, firstName, adress, postal, city, phoneNumber)
 	VALUES
 	(lastName, firstName, adress, postal, city, phoneNumber);
-
-	COMMIT;
-    
-    SELECT last_insert_id();
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -73,10 +69,6 @@ BEGIN
 	meetings (date, time, client, description, fkClient)
 	VALUES
 	(date, time, client, description, fkClient);
-
-	COMMIT;
-    
-    SELECT last_insert_id();
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -97,13 +89,33 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `DELETECLIENT`(
 	Nid int(11)
 )
 BEGIN
-	DELETE FROM meetings
-    WHERE fkClient = Nid;
-    
     DELETE FROM clients
     WHERE id = Nid;
     
 	COMMIT;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `DELETECLIENTMEETINGS` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DELETECLIENTMEETINGS`(
+	Nid int(11)
+)
+BEGIN
+	DELETE FROM meetings
+    WHERE fkClient = Nid;
+    
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -145,7 +157,7 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GETCLIENTMEETINGS`(
-	search int
+	search int(11)
 )
 BEGIN
 	SELECT * 
@@ -266,8 +278,6 @@ BEGIN
 	UPDATE clients 
     SET lastName = NlastName, firstName = NfirstName, adress = Nadress, postal = Npostal, city = Ncity, phoneNumber = NphoneNumber
     WHERE id = Nid;
-
-	COMMIT;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -296,8 +306,6 @@ BEGIN
 	UPDATE meetings 
     SET date = Ndate, time = Ntime, client = Nclient, description = Ndescription, fkClient = NfkClient
     WHERE id = Nid;
-
-	COMMIT;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -314,4 +322,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-22 17:17:54
+-- Dump completed on 2018-01-27 16:32:43

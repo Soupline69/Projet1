@@ -1,8 +1,8 @@
 package view;
 
 import java.lang.reflect.Method;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import controller.Controller;
 import javafx.collections.FXCollections;
@@ -20,8 +20,8 @@ public class MyTableViewClientsList extends MyTable<Client> {
 
 	    try {
 	    	addButtonColumn(MyTableViewClientsList.class.getMethod("getMyButtonInfo", Client.class), MyButtonPane.class);
-	    	addColumn("Nom", "lastName", 167);
-	        addColumn("Prénom", "firstName", 166);
+	    	addColumn("Nom", "lastName", 161);
+	        addColumn("Prénom", "firstName", 160);
 	        addColumn("Adresse", "adress", 300);    
 	        addColumn("Postal", "postal", 90);
 	        addColumn("Ville", "city", 170);
@@ -55,7 +55,10 @@ public class MyTableViewClientsList extends MyTable<Client> {
 	}
 	
 	public MyButtonPane getMyButtonAddRDV(Client client) {
-		return new MyButtonPane("addRDV.png", new MyPaneAddMeeting("Ajouter", 0, "create/Insertion", LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), client.getId(), controller), paneMenu);
+		Calendar calendar = Calendar.getInstance();
+		String time = calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE);
+		
+		return new MyButtonPane("addRDV.png", new MyPaneAddMeeting("Ajouter", 0, "create/Insertion", new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()), time, client.getId(), controller), paneMenu);
 	}
 	
 	public MyButton getMyButtonDelete(Client client) {

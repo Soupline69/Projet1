@@ -1,5 +1,8 @@
 package view;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import controller.Controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -29,7 +32,10 @@ public class PaneTableMeetings extends MyPaneTable {
 
 	@Override
 	public MyPaneAdd createPaneAdd(Controller controller) {
-		return new MyPaneAddMeeting("Ajouter", 0, "create/Insertion", smartSearch.getText(), -1, controller);
+		Calendar calendar = GregorianCalendar.getInstance();
+		String time = calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE);
+		
+		return new MyPaneAddMeeting("Ajouter", 0, "create/Insertion", smartSearch.getText(), time, -1, controller);
 	}
 
 }

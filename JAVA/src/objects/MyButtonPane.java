@@ -3,7 +3,7 @@ package objects;
 import interfaces.GetPaneInterface;
 import javafx.scene.layout.Pane;
 import listeners.ChangeContainerViewListener;
-import view.MyPaneMenu;
+import panes.MyPaneMenu;
 
 public class MyButtonPane extends MyButton implements GetPaneInterface {
 	private Pane pane;

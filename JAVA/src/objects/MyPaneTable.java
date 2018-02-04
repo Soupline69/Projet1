@@ -3,21 +3,23 @@ package objects;
 import controller.Controller;
 import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
+import panes.MyPaneMenu;
 import smartsearchs.SmartSearch;
-import view.MyPaneMenu;
 
 public abstract class MyPaneTable extends MyPane {
-	protected MyButtonPane add;
+	protected MyButtonMenu add;
 	protected SmartSearch smartSearch;
 	protected MyTable<?> table;
+	protected MyPaneMenu paneMenu;
 	
 	public MyPaneTable(MyTable<?> table, int space, boolean display, MyPaneMenu paneMenu, Controller controller) {
 		setPadding(new Insets(55, 0, 0, 0));
 		this.table = table;
+		this.paneMenu = paneMenu;
 		
 		if(display) {
 			createSmartSearch(controller);
-			add = new MyButtonPane("+.png", createPaneAdd(controller), paneMenu);
+			add = getMyButtonAdd(controller);
 			HBox box = new HBox(space);
 		    box.getStyleClass().add("smartBox");
 		    box.getChildren().addAll(add, smartSearch.getSearch());
@@ -31,7 +33,11 @@ public abstract class MyPaneTable extends MyPane {
 		return smartSearch;
 	}
 	
+	public MyTable<?> getTable() {
+		return table;
+	}
+	
 	protected abstract void createSmartSearch(Controller controller);
-	protected abstract MyPaneAdd createPaneAdd(Controller controller);
+	protected abstract MyButtonMenu getMyButtonAdd(Controller controller);
 
 }

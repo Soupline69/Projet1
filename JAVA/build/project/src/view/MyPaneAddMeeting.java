@@ -1,6 +1,8 @@
 package view;
 
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import controller.Controller;
 import interfaces.CRUD;
@@ -17,14 +19,15 @@ import objects.MyTextField;
 public class MyPaneAddMeeting extends MyPaneAdd {
 	private int fkClient;
 
-	public MyPaneAddMeeting(String title, int id, String method, String date, int fkClient, Controller controller) {
+	public MyPaneAddMeeting(String title, int id, String method, String date, String time, int fkClient, Controller controller) {
 		super(title + " un rendez-vous", id, method, controller);
 		this.fkClient = fkClient;
-		fillTextField(date);
+		fillTextField(date, time);
 	}
 	
-	protected void fillTextField(String date) {
+	protected void fillTextField(String date, String time) {
 		((TextField) elements.get(0).getComponent()).setText(date);
+		((TextField) elements.get(1).getComponent()).setText(time);
 		
 		if(fkClient > -1) {
 			ClientDB client = new ClientDB(fkClient);

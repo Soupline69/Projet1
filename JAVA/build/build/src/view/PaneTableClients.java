@@ -8,7 +8,7 @@ import smartsearchs.SmartSearchTextComponent;
 public class PaneTableClients extends MyPaneTable {
 
 	public PaneTableClients(MyPaneMenu paneMenu, Controller controller) {
-		super(new MyTableViewClientsList(paneMenu, controller), 450, true, paneMenu, controller); // REGLER ICI 
+		super(new MyTableViewClientsList(paneMenu, controller), 450, true, paneMenu, controller);
 	}
 
 	@Override

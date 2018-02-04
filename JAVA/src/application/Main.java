@@ -8,7 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.Model;
-import view.MyPaneMenu;
+import panes.MyPaneMenu;
 
 public class Main extends Application {
 
@@ -17,7 +17,7 @@ public class Main extends Application {
 			try {
 				Controller controller = new Controller(new Model());
 				Pane root = new MyPaneMenu(controller);
-				Scene scene = new Scene(root, 1292, 808);
+				Scene scene = new Scene(root, 1280, 800);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				
 				primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {

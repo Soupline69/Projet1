@@ -4,7 +4,7 @@ import controller.Controller;
 import interfaces.GetPaneInterface;
 import javafx.scene.layout.Pane;
 import listeners.ChangeContainerViewListener;
-import view.MyPaneMenu;
+import panes.MyPaneMenu;
 
 public abstract class MyButtonMenu extends MyButton implements GetPaneInterface {
 	protected MyPaneMenu paneMenu;

@@ -57,9 +57,12 @@ public abstract class MyPaneAdd extends MyPanePrevious {
 	
 	protected void displayResult(boolean hasError, String text) {
 		if(!hasError) {
-			MyPaneTable paneTable = ((GetPaneTableInterface) paneMenu.getPreviousContent()).getPaneTable();
-			String smartText = paneTable.getSmartSearch().getText();
-			paneTable.getTable().refresh(smartText);
+			if(paneMenu.getPreviousContent() instanceof GetPaneTableInterface) {
+				MyPaneTable paneTable = ((GetPaneTableInterface) paneMenu.getPreviousContent()).getPaneTable();
+				String smartText = paneTable.getSmartSearch().getText();
+				paneTable.getTable().refresh(smartText);
+			}
+			
 			changeResponse("#28960a", text + " réussi");
 			reset();
 		} else

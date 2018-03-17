@@ -4,6 +4,7 @@ import java.util.List;
 
 import controller.Controller;
 import interfaces.CRUD;
+import interfaces.GetPaneTableInterface;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -12,16 +13,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import panes.MyPaneMenu;
 
-public abstract class MyPaneAdd extends MyPane {
+public abstract class MyPaneAdd extends MyPanePrevious {
 	protected List<Element> elements;
 	protected Label response = new Label();
 	protected Button add;
 	protected Button reset;
+	protected MyPaneMenu paneMenu;
 	protected Controller controller;
 
-	public MyPaneAdd(String string, int id, String method, Controller controller) {
-		super(string);
+	public MyPaneAdd(String string, int id, String method, MyPaneMenu paneMenu, Controller controller) {
+		super(string, paneMenu, controller);
+		this.paneMenu = paneMenu;
 		this.controller = controller;
 		add = new MyButton("add.png", new AddListener(id, method));
 		reset = new MyButton("reset.png", new ResetListener());
@@ -34,6 +38,7 @@ public abstract class MyPaneAdd extends MyPane {
 	
 	private void buildPanel() {
 		VBox vBox = new VBox(15);
+		vBox.setStyle("-fx-padding : 0px 0px 0px -100px;");
 		vBox.setAlignment(Pos.BASELINE_CENTER);
 
 		response.setPrefHeight(100);
@@ -52,6 +57,12 @@ public abstract class MyPaneAdd extends MyPane {
 	
 	protected void displayResult(boolean hasError, String text) {
 		if(!hasError) {
+			if(paneMenu.getPreviousContent() instanceof GetPaneTableInterface) {
+				MyPaneTable paneTable = ((GetPaneTableInterface) paneMenu.getPreviousContent()).getPaneTable();
+				String smartText = paneTable.getSmartSearch().getText();
+				paneTable.getTable().refresh(smartText);
+			}
+			
 			changeResponse("#28960a", text + " réussi");
 			reset();
 		} else

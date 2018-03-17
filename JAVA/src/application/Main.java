@@ -15,9 +15,11 @@ public class Main extends Application {
 	@Override
 		public void start(Stage primaryStage) {
 			try {
+				primaryStage.setMaxHeight(767);
+				primaryStage.setMaxWidth(1283);
 				Controller controller = new Controller(new Model());
 				Pane root = new MyPaneMenu(controller);
-				Scene scene = new Scene(root, 1280, 800);
+				Scene scene = new Scene(root, 1283, 767);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				
 				primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {

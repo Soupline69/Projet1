@@ -10,7 +10,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import view.MyPaneMenu;
+import panes.MyPaneMenu;
 
 public abstract class MyTable<T> extends TableView<T> {
 	protected ObservableList<T> datas;
@@ -65,5 +65,5 @@ public abstract class MyTable<T> extends TableView<T> {
         
         getColumns().add(button);
 	}
-
+	
 }

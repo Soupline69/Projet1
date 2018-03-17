@@ -3,8 +3,10 @@ package model;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import myconnections.DBConnection;
 
@@ -47,7 +49,7 @@ public class Model {
 	
 	public List<Meeting> getMeetings(String search) {
 		List<Meeting> meetings = new ArrayList<>();
-		
+
 		try {
             CallableStatement cstmt = dbConnect.prepareCall("call GETMEETINGS(?)");
             cstmt.setString(1, search);

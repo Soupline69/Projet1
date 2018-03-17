@@ -115,7 +115,7 @@
 .table-row-cell {
 	-fx-padding : 4px 0px 0px 0px;
     -fx-background-color: #fefbfc;
-    -fx-pref-height: 40px;
+    -fx-pref-height: 42px;
 }
 
 .table-row-cell:odd{

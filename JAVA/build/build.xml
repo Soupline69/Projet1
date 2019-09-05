@@ -5,7 +5,6 @@
 			<filelist>
 				<file name="${java.home}\..\lib\ant-javafx.jar"/>
 				<file name="${java.home}\lib\jfxrt.jar"/>
-			    <file name="${basedir}"/>
 			</filelist>
 		</path>
 	
@@ -34,12 +33,12 @@
 		<mkdir dir="project" />
 		<copy todir="project">
 			<fileset dir="C:\Users\mim\Documents\MesProjets\ChristelleCoiffeur\Projet1\JAVA">
-				<include name="icons/**" />
+				<include name="src/**" />
 			</fileset>
 		</copy>
 		<copy todir="project">
 			<fileset dir="C:\Users\mim\Documents\MesProjets\ChristelleCoiffeur\Projet1\JAVA">
-				<include name="src/**" />
+				<include name="icons/**" />
 			</fileset>
 		</copy>
 	
@@ -110,13 +109,11 @@
 		<fx:resources id="appRes">
 			<fx:fileset dir="dist" includes="ChristelleCoiffeur.jar"/>
 			<fx:fileset dir="dist" includes="libs/*"/>
-		    <fx:fileset dir="dist" includes="resources/**"/>
 		</fx:resources>
 	
 		<fx:application id="fxApplication"
 			name="Coiffeur"
 			mainClass="application.Main"
-		    version="1.0"
 		/>
 	
 		<mkdir dir="build/classes/META-INF" />
@@ -132,7 +129,7 @@
 			<manifest>
 				<attribute name="Implementation-Vendor" value="Coiffeur"/>
 				<attribute name="Implementation-Title" value="Coiffeur"/>
-				<attribute name="Implementation-Version" value="1.0"/>
+				<attribute name="Implementation-Version" value="2.0"/>
 				<attribute name="JavaFX-Feature-Proxy" value="None"/>
 			</manifest>
 		</fx:jar>

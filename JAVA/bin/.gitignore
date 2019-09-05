@@ -1,12 +1,4 @@
-/objects/
-/smartsearchs/
-/view/
-/db/
-/application/
-/buttons/
-/interfaces/
 /panes/
+/smartsearchs/
 /tables/
-/listeners/
-/previous.png
-/model/
+/db/

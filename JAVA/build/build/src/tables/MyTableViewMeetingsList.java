@@ -23,7 +23,7 @@ public class MyTableViewMeetingsList extends MyTable<Meeting> {
 			if(display) addColumn("Heure", "time", 120);
 			addColumn("Client", "client", 250);
 			addColumn("Description", "description", widthDescription);
-			if(display) addButtonColumn(MyTableViewMeetingsList.class.getMethod("getMyButtonUpdate", Meeting.class), MyButtonMenu.class);
+			addButtonColumn(MyTableViewMeetingsList.class.getMethod("getMyButtonUpdate", Meeting.class), MyButtonMenu.class);
 			addButtonColumn(MyTableViewMeetingsList.class.getMethod("getMyButtonDelete", Meeting.class), MyButton.class);
 		} catch(Exception e) {
 			e.printStackTrace();

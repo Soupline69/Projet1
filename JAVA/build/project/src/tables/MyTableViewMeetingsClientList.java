@@ -8,7 +8,7 @@ import panes.MyPaneMenu;
 public class MyTableViewMeetingsClientList extends MyTableViewMeetingsList {
 
 	public MyTableViewMeetingsClientList(String name, int id, MyPaneMenu paneMenu, Controller controller) {
-		super(paneMenu, controller, 675, false);
+		super(paneMenu, controller, 611, false);
 		setPlaceholder(new Label("Pas de données trouvées pour \"" + name + "\""));
 		refresh(String.valueOf(id));
 	}

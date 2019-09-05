@@ -11,7 +11,7 @@ public class MyPaneClientsList extends MyPane implements GetPaneTableInterface {
 	public MyPaneClientsList(MyPaneMenu paneMenu, Controller controller) {
 		super("Liste des clients");
 		paneTable = new MyPaneTableClients(paneMenu, controller);
-		paneTable.setMaxWidth(1270);
+		paneTable.setMaxWidth(1274);
 		setCenter(paneTable);
 	}
 
